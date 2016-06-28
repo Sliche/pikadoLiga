@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+{% block body %}
+
+    <ul>
+
+        {% for kolo in kola %}
+            <h1>Kolo: {{kolo}}</h1>
+            {% for match in matchesList %}
+
+                {% if match.kolo == kolo  %}
+
+                <form action="/kola" method="post">
+                    <li style="float:left;width:100px;"> <span> {{match.domaci}} </span> vs <span> {{match.gosti}} </span> </li>
+                    <input style="float:left;width:70px;margin-right:2px" value="{{match.poeniDomacih}}" type="text" name="domaci"> <span style="float:left;">:</span>
+                    <input style= "float:left;width:70px" value="{{match.poeniGostiju}}" type="text" name="gosti">
+                    <input type="hidden" name="id" value={{match.id}}>
+
+                    {% if match.rezultat == "" %}
+                    <input type="submit" value="prijavi">
+                    {% endif %}
+
+                    <br><br>
+
+                </form>
+
+                {% endif %}
+            {% endfor %}
+
+
+        {% endfor %}
+
+
+    </ul>
+
+{% endblock %}
+

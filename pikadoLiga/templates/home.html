@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+{% block body %}
+  <ul>
+  {% for tim in listaTimova %}
+    <li> {{tim.ime}} </li>
+  {% endfor %}
+  </ul>
+
+    <p>tralalalalal </p>
+
+
+<a href="/register"> Registracija </a> <br>
+<a href="/kola"> Kola </a> <br>
+<a href="/svitimovi"> Svi timovi </a> <br>
+<a href="/standings"> Standings  </a> <br>
+<!--<a href="/register">  </a> <br>-->
+
+{% endblock %}

@@ -1,0 +1,36 @@
+#!/bin/bash
+# USE vagrant_1.8.1_x86_64   with   virtualbox-5.0_5.0.10-104061-Ubuntu-trusty_amd64
+# vagrant plugin install vagrant-vbguest
+
+# update / upgrade
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install make mc curl git python-software-properties -y
+
+#Installing pip
+sudo apt-get install -y python-pip
+
+#mysql client
+sudo apt-get install libmysqlclient-dev -y
+
+#python dev
+sudo apt-get install python-dev -y
+
+#Installing Flask
+sudo pip install Flask
+
+#elasticsearch module for py
+sudo pip install elasticsearch
+
+#elasticsearch dsl
+sudo pip install elasticsearch_dsl
+
+#flask mysql 
+sudo pip install flask-mysqldb
+
+
+#Cleanup
+sudo apt-get autoremove -y
+
+echo "vagrant.sh is executed."
+
